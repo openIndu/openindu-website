@@ -2,7 +2,7 @@
 
 > **Language:** English | [中文](README_ZH.md)
 
-The **aggregate repository** for the openIndu open-source industrial automation ecosystem, managing three deployable applications — Portal (community site), Admin (dashboard), and Backend (FastAPI + MCP) — via git submodules. The independently maintained [openIndu-studio](https://github.com/openIndu/openIndu-studio) project is no longer embedded in this repository.
+The **aggregate repository** for the openIndu open-source industrial automation ecosystem, managing three deployable applications — Portal (community site), Admin (dashboard), and Backend (FastAPI + MCP) — via git submodules. The independently maintained [openindu-studio](https://github.com/openIndu/openindu-studio) project is no longer embedded in this repository.
 
 > **Version**: `requirements.md` v0.15.0 (2026-09-23) | **Authoritative spec**: [`prod/requirements.md`](prod/requirements.md)
 
