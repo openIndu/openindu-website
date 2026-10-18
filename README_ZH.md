@@ -1,6 +1,6 @@
 > **语言:** [English](README.md) | 中文
 
-# openIndu-website
+# openindu-website
 
 openIndu 开源工业自动化生态平台的**聚合开发仓**，通过 git submodule 统一管理 Portal（社区官网）、Admin（管理后台）和 Backend（FastAPI + MCP）三个可部署应用。独立维护的 [openindu-studio](https://github.com/openIndu/openindu-studio) 项目不再嵌入本仓。
 
@@ -35,11 +35,11 @@ graph TB
     ING["🌐 Nginx Ingress"]
 
     subgraph Frontend["前端 — React 19 + Tailwind 4 + shadcn/ui"]
-        P["openIndu-portal<br/>openindu.com"]
-        A["openIndu-admin<br/>admin.openindu.com"]
+        P["openindu-portal<br/>openindu.com"]
+        A["openindu-admin<br/>admin.openindu.com"]
     end
 
-    subgraph Backend["openIndu-backend — FastAPI 双应用"]
+    subgraph Backend["openindu-backend — FastAPI 双应用"]
         W["Web REST API<br/>api.openindu.com :8004"]
         M["MCP Server<br/>:8005 · 仅内网"]
     end
@@ -50,7 +50,7 @@ graph TB
         OSS[("对象存储<br/>OSS / MinIO / 本地 FS")]
     end
 
-    STUDIO["openIndu-studio<br/>索引执行器（待建设）"]
+    STUDIO["openindu-studio<br/>索引执行器（待建设）"]
     SMS["阿里云 / 腾讯云<br/>短信"]
 
     U1 -->|HTTPS| ING
@@ -103,9 +103,9 @@ graph TB
 
 | 子仓库                                                           | 路径                | 技术栈                                     |  状态   |
 | ---------------------------------------------------------------- | ------------------- | ------------------------------------------ | :-----: |
-| [openIndu-backend](https://github.com/openIndu/openIndu-backend) | `openIndu-backend/` | FastAPI · SQLAlchemy 2 · Milvus · boto3    | 🟢 活跃 |
-| [openIndu-admin](https://github.com/openIndu/openIndu-admin)     | `openIndu-admin/`   | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 活跃 |
-| [openIndu-portal](https://github.com/openIndu/openIndu-portal)   | `openIndu-portal/`  | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 活跃 |
+| [openindu-backend](https://github.com/openIndu/openindu-backend) | `openIndu-backend/` | FastAPI · SQLAlchemy 2 · Milvus · boto3    | 🟢 活跃 |
+| [openindu-admin](https://github.com/openIndu/openindu-admin)     | `openIndu-admin/`   | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 活跃 |
+| [openindu-portal](https://github.com/openIndu/openindu-portal)   | `openIndu-portal/`  | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 活跃 |
 
 > Studio 早期的 Vue 前端 / FastAPI 后端已迁出至 portal·admin·backend，仓库本身继续作为**独立维护的工程产物生成引擎 + AI Agent 工作流工具链**，
 > 但不再嵌入 Website 作为 submodule。对外服务化规划见 [`prod/requirements.md` §2.2.8 / §4.3.13](prod/requirements.md)。
@@ -116,8 +116,8 @@ graph TB
 
 ```bash
 # 1. 克隆聚合仓（含所有子仓）
-git clone --recurse-submodules https://github.com/openIndu/openIndu-website.git
-cd openIndu-website
+git clone --recurse-submodules https://github.com/openIndu/openindu-website.git
+cd openindu-website
 
 # 2. 从模板创建本地环境变量
 cp .env.example .env
@@ -131,8 +131,8 @@ docker compose up -d --build
 
 | 服务            |  端口   | 说明                         |
 | --------------- | :-----: | ---------------------------- |
-| openIndu-portal | `3000`  | 社区官网前台                 |
-| openIndu-admin  | `3001`  | 统一管理后台                 |
+| openindu-portal | `3000`  | 社区官网前台                 |
+| openindu-admin  | `3001`  | 统一管理后台                 |
 | Web API         | `8004`  | REST API                     |
 | MCP Server      | `8005`  | Claude Code 知识检索（内网） |
 | PostgreSQL      | `5432`  | 业务数据库                   |
@@ -153,7 +153,7 @@ cd openIndu-backend
 git checkout -b feat/my-feature
 # ... 修改 ...
 git push origin feat/my-feature
-gh pr create --repo openIndu/openIndu-backend --base main
+gh pr create --repo openIndu/openindu-backend --base main
 
 # 回到聚合仓提交 submodule 指针变更
 cd ..

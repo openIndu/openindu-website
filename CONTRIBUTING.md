@@ -1,4 +1,4 @@
-# Contributing to openIndu-website
+# Contributing to openindu-website
 
 This is the aggregate repository. Application code lives in the submodules
 (`openIndu-backend`, `openIndu-admin`, `openIndu-portal`) — make code changes

@@ -1,4 +1,4 @@
-# openIndu-website
+# openindu-website
 
 > **Language:** English | [中文](README_ZH.md)
 
@@ -35,11 +35,11 @@ graph TB
     ING["🌐 Nginx Ingress"]
 
     subgraph Frontend["Frontend — React 19 + Tailwind 4 + shadcn/ui"]
-        P["openIndu-portal<br/>openindu.com"]
-        A["openIndu-admin<br/>admin.openindu.com"]
+        P["openindu-portal<br/>openindu.com"]
+        A["openindu-admin<br/>admin.openindu.com"]
     end
 
-    subgraph Backend["openIndu-backend — FastAPI Dual Apps"]
+    subgraph Backend["openindu-backend — FastAPI Dual Apps"]
         W["Web REST API<br/>api.openindu.com :8004"]
         M["MCP Server<br/>:8005 · internal only"]
     end
@@ -50,7 +50,7 @@ graph TB
         OSS[("Object Storage<br/>OSS / MinIO / local FS")]
     end
 
-    STUDIO["openIndu-studio<br/>indexing worker (planned)"]
+    STUDIO["openindu-studio<br/>indexing worker (planned)"]
     SMS["Alibaba Cloud / Tencent Cloud<br/>SMS"]
 
     U1 -->|HTTPS| ING
@@ -103,9 +103,9 @@ See [`prod/requirements.md` section 4.3.6-2](prod/requirements.md#4362-upload-se
 
 | Sub-repo                                                           | Path                | Stack                                      |  Status  |
 | ------------------------------------------------------------------ | ------------------- | ------------------------------------------ | :------: |
-| [openIndu-backend](https://github.com/openIndu/openIndu-backend)   | `openIndu-backend/` | FastAPI · SQLAlchemy 2 · Milvus · boto3    | 🟢 active |
-| [openIndu-admin](https://github.com/openIndu/openIndu-admin)       | `openIndu-admin/`   | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 active |
-| [openIndu-portal](https://github.com/openIndu/openIndu-portal)     | `openIndu-portal/`  | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 active |
+| [openindu-backend](https://github.com/openIndu/openindu-backend)   | `openIndu-backend/` | FastAPI · SQLAlchemy 2 · Milvus · boto3    | 🟢 active |
+| [openindu-admin](https://github.com/openIndu/openindu-admin)       | `openIndu-admin/`   | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 active |
+| [openindu-portal](https://github.com/openIndu/openindu-portal)     | `openIndu-portal/`  | React 19 · Vite 6 · Tailwind 4 · shadcn/ui | 🟢 active |
 
 > Studio's earlier Vue frontend / FastAPI backend have been migrated out to portal, admin, and backend. Studio continues as an **independently maintained engineering-output generation engine + AI Agent workflow toolchain**, but is no longer embedded as a Website submodule. See [`prod/requirements.md` sections 2.2.8 / 4.3.13](prod/requirements.md) for future service-oriented plans.
 
@@ -115,8 +115,8 @@ See [`prod/requirements.md` section 4.3.6-2](prod/requirements.md#4362-upload-se
 
 ```bash
 # 1. Clone the monorepo (with all sub-repos)
-git clone --recurse-submodules https://github.com/openIndu/openIndu-website.git
-cd openIndu-website
+git clone --recurse-submodules https://github.com/openIndu/openindu-website.git
+cd openindu-website
 
 # 2. Create local env file from template
 cp .env.example .env
@@ -130,8 +130,8 @@ docker compose up -d --build
 
 | Service          |  Port   | Description                      |
 | ---------------- | :-----: | -------------------------------- |
-| openIndu-portal  | `3000`  | Community site                   |
-| openIndu-admin   | `3001`  | Admin dashboard                  |
+| openindu-portal  | `3000`  | Community site                   |
+| openindu-admin   | `3001`  | Admin dashboard                  |
 | Web API          | `8004`  | REST API                         |
 | MCP Server       | `8005`  | Claude Code knowledge retrieval  |
 | PostgreSQL       | `5432`  | Business database                |
@@ -152,7 +152,7 @@ cd openIndu-backend
 git checkout -b feat/my-feature
 # ... make changes ...
 git push origin feat/my-feature
-gh pr create --repo openIndu/openIndu-backend --base main
+gh pr create --repo openIndu/openindu-backend --base main
 
 # Back in the monorepo, commit the submodule pointer update
 cd ..

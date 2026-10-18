@@ -1,4 +1,4 @@
-# openIndu-website — 聚合仓项目指南
+# openindu-website — 聚合仓项目指南
 
 > **Rule #1（元规则）**：本仓遵守 openIndu 社区统一守则（11 条 RULE），由公共插件 `openindu-control-tower@openindu` 提供（源仓 [openIndu/control-tower](https://github.com/openIndu/control-tower)）。**任何任务第一步：调用 `/principle` 加载守则。** 本仓不得自立守则副本；守则修改走 control-tower 的 spec + arbiter 审核流程。
 >
@@ -22,41 +22,41 @@
 
 ## 0. 工作目录约定
 
-**工作目录**: `openIndu-website`
+**工作目录**: `openindu-website`
 
 **重要约定**:
 
-- 所有文件操作必须限制在 `openIndu-website` 工作目录内
-- 所有相对路径均以 `openIndu-website` 为根目录
+- 所有文件操作必须限制在 `openindu-website` 工作目录内
+- 所有相对路径均以 `openindu-website` 为根目录
 - 子仓库通过 git submodule 挂载，Agent 操作子仓代码前需先 `cd` 进入对应子目录
 
 ---
 
 ## 1. 项目概述
 
-**openIndu-website** 是 openIndu 开源工业自动化生态平台的**聚合开发仓**，通过 git submodule 统一管理以下子仓库：
+**openindu-website** 是 openIndu 开源工业自动化生态平台的**聚合开发仓**，通过 git submodule 统一管理以下子仓库：
 
 | 子仓库                                                           | 路径                | 技术栈                                     | 说明                                                                                          |
 | ---------------------------------------------------------------- | ------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------- |
-| [openIndu-backend](https://github.com/openIndu/openIndu-backend) | `openIndu-backend/` | FastAPI + PostgreSQL + Milvus              | REST API + MCP Server                                                                         |
-| [openIndu-admin](https://github.com/openIndu/openIndu-admin)     | `openIndu-admin/`   | React 19 + Tailwind CSS 4 + shadcn/ui      | 统一管理后台                                                                                  |
-| [openIndu-portal](https://github.com/openIndu/openIndu-portal)   | `openIndu-portal/`  | React 19 + Tailwind CSS 4 + shadcn/ui      | 社区官网前台                                                                                  |
+| [openindu-backend](https://github.com/openIndu/openindu-backend) | `openIndu-backend/` | FastAPI + PostgreSQL + Milvus              | REST API + MCP Server                                                                         |
+| [openindu-admin](https://github.com/openIndu/openindu-admin)     | `openIndu-admin/`   | React 19 + Tailwind CSS 4 + shadcn/ui      | 统一管理后台                                                                                  |
+| [openindu-portal](https://github.com/openIndu/openindu-portal)   | `openIndu-portal/`  | React 19 + Tailwind CSS 4 + shadcn/ui      | 社区官网前台                                                                                  |
 
 ### 平台服务总览
 
 | 服务                   | 域名/端口            | 定位                               | 用户                     |
 | ---------------------- | -------------------- | ---------------------------------- | ------------------------ |
-| openIndu-portal        | `openindu.com`       | 社区官网前台                       | 所有人（含未登录）       |
-| openIndu-admin         | `admin.openindu.com` | 统一管理后台                       | 已认证用户（按角色分级） |
-| openIndu-backend (Web) | `api.openindu.com`   | REST API（Portal + Admin）         | 前端应用                 |
-| openIndu-backend (MCP) | `:8005`              | MCP Server（Claude Code 知识检索） | Claude Code / AI Agent   |
+| openindu-portal        | `openindu.com`       | 社区官网前台                       | 所有人（含未登录）       |
+| openindu-admin         | `admin.openindu.com` | 统一管理后台                       | 已认证用户（按角色分级） |
+| openindu-backend (Web) | `api.openindu.com`   | REST API（Portal + Admin）         | 前端应用                 |
+| openindu-backend (MCP) | `:8005`              | MCP Server（Claude Code 知识检索） | Claude Code / AI Agent   |
 
 ---
 
 ## 2. 项目结构
 
 ```
-openIndu-website/
+openindu-website/
 ├── CLAUDE.md                         # 本文件：聚合仓入口指南
 ├── README.md                         # 项目说明
 ├── prod/                             # 生产规范（权威文档源）
@@ -147,7 +147,7 @@ openIndu-website/
 ### 克隆聚合仓（含子仓）
 
 ```bash
-git clone --recurse-submodules https://github.com/openIndu/openIndu-website.git
+git clone --recurse-submodules https://github.com/openIndu/openindu-website.git
 ```
 
 ### 更新子仓
@@ -188,7 +188,7 @@ gh pr create --repo openIndu/<subrepo> --base main --head feat/my-feature
 
 ```bash
 # 1. 克隆聚合仓（含子仓）
-git clone --recurse-submodules https://github.com/openIndu/openIndu-website.git
+git clone --recurse-submodules https://github.com/openIndu/openindu-website.git
 
 # 2. 从模板创建 .env
 cp .env.example .env
@@ -201,8 +201,8 @@ docker compose up -d --build
 
 | 服务            |  端口   | 说明                 |
 | --------------- | :-----: | -------------------- |
-| openIndu-portal | `3000`  | 社区官网前台         |
-| openIndu-admin  | `3001`  | 管理后台             |
+| openindu-portal | `3000`  | 社区官网前台         |
+| openindu-admin  | `3001`  | 管理后台             |
 | Web API         | `8004`  | REST API             |
 | MCP Server      | `8005`  | Claude Code 知识检索 |
 | PostgreSQL      | `5432`  | 业务数据库           |
