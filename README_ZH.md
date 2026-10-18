@@ -2,7 +2,7 @@
 
 # openIndu-website
 
-openIndu 开源工业自动化生态平台的**聚合开发仓**，通过 git submodule 统一管理 Portal（社区官网）、Admin（管理后台）和 Backend（FastAPI + MCP）三个可部署应用。独立维护的 [openIndu-studio](https://github.com/openIndu/openIndu-studio) 项目不再嵌入本仓。
+openIndu 开源工业自动化生态平台的**聚合开发仓**，通过 git submodule 统一管理 Portal（社区官网）、Admin（管理后台）和 Backend（FastAPI + MCP）三个可部署应用。独立维护的 [openindu-studio](https://github.com/openIndu/openindu-studio) 项目不再嵌入本仓。
 
 > **版本**：`requirements.md` v0.15.0（2026-09-23）｜ **权威需求文档**：[`prod/requirements.md`](prod/requirements.md)
 
